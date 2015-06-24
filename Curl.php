@@ -262,6 +262,11 @@ class Curl extends Component
         //check if method is head and set no body
         if ($method === 'HEAD') {
             $this->setOption(CURLOPT_NOBODY, true);
+            $this->setOption(CURLOPT_HEADER, true);
+            $this->unsetOption(CURLOPT_WRITEFUNCTION);
+        } if ($method === 'OPTIONS') {
+            $this->setOption(CURLOPT_NOBODY, true);
+            $this->setOption(CURLOPT_HEADER, true);
             $this->unsetOption(CURLOPT_WRITEFUNCTION);
         } else {
             $this->setOption(CURLOPT_WRITEFUNCTION, function ($curl, $data) use (&$body) {
