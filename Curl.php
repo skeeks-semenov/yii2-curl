@@ -10,7 +10,7 @@
 
 namespace skeeks\yii2\curl;
 
-use skeeks\cms\base\Component;
+use yii\base\Component;
 use Yii;
 use yii\base\Exception;
 use yii\web\HttpException;
